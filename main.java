@@ -5,11 +5,9 @@ class Main {
     public static void main(String[] args) 
 	{
 	    LinkedList<Eingabe> list = new LinkedList<Eingabe>();
+	    System.out.print("*** Calculator ***\nBitte Wert, Operator, Wert eingeben und mit '=' abschließen.\nBeispiel: 1.36 'Enter', + 'Enter', 3.14 'Enter', = 'Enter'");
 	    
-	    while(true)
-	   
-	    {
-	        System.out.print("Bitte Wert, Operator, Wert, = eingeben.\n(Beispiel: 1.36 'Enter', + 'Enter', 3.14 'Enter', = 'Enter')");
+	    while(true) {
 	        Scanner scanner = new Scanner(System.in);
 	        String line = scanner.nextLine();
 	        
