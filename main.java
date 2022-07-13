@@ -7,32 +7,31 @@ class Main {
 	    LinkedList<Eingabe> list = new LinkedList<Eingabe>();
 	    
 	    while(true)
+	   
 	    {
-	        System.out.print("Wert eingeben: ");
+	        System.out.print("Bitte Wert, Operator, Wert, = eingeben.\n(Beispiel: 1.36 'Enter', + 'Enter', 3.14 'Enter', = 'Enter')");
 	        Scanner scanner = new Scanner(System.in);
 	        String line = scanner.nextLine();
 	        
-	        System.out.println("Eingabe: " + line);
-	        
 	        if (list.size() == 0 || list.getLast() instanceof Operator)
 	        {
-	            System.out.println("Insert Nummer");
+	            // System.out.println("Nummer insterted to list");
 	            list.addLast(new Nummer(line));
 	            continue;
 	        }
 	        
 	        if (line.equals("+") || line.equals("-") || line.equals("*") || line.equals("/")) {
-	            System.out.println("Insert Operator");
+	            
+	            // System.out.println("Operator inserted to list");
 	            if (list.getLast() instanceof Nummer) {
 	                list.addLast(new Operator(line));
 	            }
-	            
 	            continue;
 	        }
 	        
 	        if (line.equals("=")) {
-	            System.out.println("Berechnen!");
 	            
+	            //System.out.println("Berechnung...");
 	            float lastResult = 0.0f;
 	            
 	            while(!list.isEmpty()) {
@@ -57,7 +56,7 @@ class Main {
 	                        lastResult = lastResult / nr;
 	                }
 	                
-	                System.out.println("Wert: " + lastResult);
+	                System.out.println("Ergebnis: " + lastResult + "\n");
 	            }
 	        }
 	    }
